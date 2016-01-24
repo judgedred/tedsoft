@@ -18,12 +18,12 @@
     </script>
 </head>
 <body>
-<h3>Device state chsnge</h3>
+<h3>Device state change</h3>
 
 <form action=""  id="keyForm">
-    <label for="keyword">Введите ключ </label>
+    <label for="keyword">Enter key </label>
     <input type="text" id="keyword"/>
-    <input type="submit" value="Отправить"/>
+    <input type="submit" value="Send"/>
 </form>
 
 <div id="result"></div>

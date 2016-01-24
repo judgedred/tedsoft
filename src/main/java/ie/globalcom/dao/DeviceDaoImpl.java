@@ -2,6 +2,7 @@ package ie.globalcom.dao;
 
 import ie.globalcom.domain.Device;
 
+import java.lang.reflect.Constructor;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -34,7 +35,7 @@ public class DeviceDaoImpl implements DeviceDao
     }
 
     @Override
-    public Class getDeviceByKey(String key) throws DaoException
+    public Device getDeviceByKey(String key) throws DaoException
     {
         try
         {
@@ -44,12 +45,14 @@ public class DeviceDaoImpl implements DeviceDao
             if(rs.next())
             {
                 String classNameStr = rs.getString(1);
-                Class deviceClass = null;
+                Device device = null;
                 if(classNameStr != null)
                 {
-                    deviceClass = Class.forName(classNameStr);
+                    Class deviceClass = Class.forName(classNameStr);
+                    Constructor constructor = deviceClass.getConstructor();
+                    device = (Device)constructor.newInstance();
                 }
-                return deviceClass;
+                return device;
             }
             else
             {
@@ -61,8 +64,6 @@ public class DeviceDaoImpl implements DeviceDao
             throw new DaoException(e);
         }
     }
-
-
 
     @Override
     public void close() throws DaoException

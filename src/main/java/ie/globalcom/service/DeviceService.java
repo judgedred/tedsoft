@@ -2,9 +2,10 @@ package ie.globalcom.service;
 
 
 import ie.globalcom.dao.DaoException;
+import ie.globalcom.domain.Device;
 
 public interface DeviceService
 {
-    public Class getDeviceByKey(String key) throws DaoException;
+    public Device getDeviceByKey(String key) throws DaoException;
     public void close() throws DaoException;
 }

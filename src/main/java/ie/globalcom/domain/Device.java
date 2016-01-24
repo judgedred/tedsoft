@@ -1,7 +1,20 @@
 package ie.globalcom.domain;
 
 
-public interface Device
+public class Device
 {
-    public boolean toggle();
+    private boolean isTurnedOn;
+
+    public boolean toggle()
+    {
+        if(isTurnedOn)
+        {
+            isTurnedOn = false;
+        }
+        else
+        {
+            isTurnedOn = true;
+        }
+        return isTurnedOn;
+    }
 }

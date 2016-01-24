@@ -7,7 +7,5 @@
 <body>
 <p><a href="<s:url action='task1'/>">Task 1</a></p>
 <a href="<s:url action='task4'/>">Task 4</a>
-
-<s:property value="className"/>
 </body>
 </html>

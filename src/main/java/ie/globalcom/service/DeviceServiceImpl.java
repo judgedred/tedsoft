@@ -4,16 +4,31 @@ import ie.globalcom.dao.DaoException;
 import ie.globalcom.dao.DaoFactory;
 import ie.globalcom.dao.DaoFactoryImpl;
 import ie.globalcom.dao.DeviceDao;
+import ie.globalcom.domain.Device;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class DeviceServiceImpl implements DeviceService
 {
     private DeviceDao deviceDao;
+    private Map<String, Device> deviceMap = new HashMap<>();
 
     @Override
-    public Class getDeviceByKey(String key) throws DaoException
+    public Device getDeviceByKey(String key) throws DaoException
     {
-        return deviceDao.getDeviceByKey(key);
+        Device device = deviceDao.getDeviceByKey(key);
+        String deviceName = device.getClass().getSimpleName();
+        if(deviceMap.get(deviceName) == null)
+        {
+            deviceMap.put(deviceName, device);
+        }
+        else
+        {
+            device = deviceMap.get(deviceName);
+        }
+        return device;
     }
 
     @Override
