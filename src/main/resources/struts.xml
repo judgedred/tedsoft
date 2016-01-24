@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true" />
+
+    <package name="basicstruts2" extends="json-default">
+
+        <action name="index">
+            <result>/index.jsp</result>
+        </action>
+
+        <action name="task4">
+            <result>WEB-INF/jsp/task4.jsp</result>
+        </action>
+
+        <action name="task1">
+            <result>WEB-INF/jsp/task1.jsp</result>
+        </action>
+
+        <action name="toggleJSON" class="ie.globalcom.web.DeviceController" method="processDeviceJSON">
+            <result type="json">
+                <param name="excludeNullProperties">true</param>
+                <param name="noCache">true</param>
+            </result>
+        </action>
+
+    </package>
+</struts>

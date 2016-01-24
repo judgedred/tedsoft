@@ -1,0 +1,13 @@
+use device;
+Insert Into Classes(class_name) Values("ie.globalcom.domain.Bell");
+Insert Into Classes(class_name) Values("ie.globalcom.domain.Bulb");
+Insert Into Classes(class_name) Values("ie.globalcom.domain.Valve");
+Insert Into Classes(class_name) Values("ie.globalcom.domain.Burner");
+Insert Into Classes(class_name) Values("ie.globalcom.domain.Computer");
+Insert Into Classes(class_name) Values("ie.globalcom.domain.Amplifier");
+Insert Into Classes(class_name) Values("ie.globalcom.domain.RobotCleaner");
+Insert Into Classes(class_name) Values("ie.globalcom.domain.Toster");
+Insert Into Classes(class_name) Values("ie.globalcom.domain.Microwave");
+Insert Into Keywords(keyword, binded_class) Values ("ring", 1);
+Insert Into Keywords(keyword, binded_class) Values ("bell", 1);
+Insert Into Keywords(keyword, binded_class) Values ("light", 2);
